@@ -54,6 +54,7 @@ export default {
 <style scoped>
 .parent {
   padding: 20% 10%;
+  text-align: center;
 }
 .buyCard {
   /* width:400px; */
@@ -98,9 +99,13 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .parent {
-    padding: 10% 30%;
+    padding: 10% 30% 10% 20%;
     margin-right: 30px;
+
     /* background: red; */
+  }
+  .buyCard{
+    margin-right: 10%;
   }
   .content {
     padding: 10px 20px;

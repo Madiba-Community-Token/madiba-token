@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="footer">
-        <app-button :styles="{}" :text="'Buy $Madiba'" @action="buyMadiba" />
+        <app-button :styles="{}" :text="'Buy $diba'" @action="$emit('viewBuy')" />
       </div>
     </div>
     <div class="col-md-8 imageArea">
@@ -48,11 +48,6 @@ import AppButton from "../../components/button.vue";
 export default {
   components: {
     AppButton,
-  },
-  methods: {
-    buyMadiba() {
-      window.open("https://google.com", "_blank");
-    },
   },
 };
 </script>

@@ -3,7 +3,7 @@
     <nav-bar @toggleView="toggleView($event)" :view="view" />
     <side-bar @toggleView="toggleView($event)" :current="''" :view="view" />
     <div v-if="view !== 'buy'" class="content" @click="closeNav">
-      <intro-view v-if="view !== 'nft'" />
+      <intro-view v-if="view !== 'nft'" @viewBuy="toggleView('buy')"/>
       <NFTView v-else />
       <div v-if="view !== 'nft'">
         <overview />
