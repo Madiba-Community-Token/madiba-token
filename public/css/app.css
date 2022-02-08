@@ -1,0 +1,48 @@
+:root {
+  --primary: #03ff83;
+  --darkText: #7a9788;
+  --lightText: #c5ffe2;
+  --iconbg: #03ff8333;
+  --lineGreen: #c5ffe24d;
+  --black: #1d1d1d;
+  --socialIconbg: #7A9788;
+}
+body,
+html {
+  background-color: var(--black);
+  padding-top: 1%;
+  overflow: visible;
+}
+.body {
+  margin: 0px;
+  position: fixed;
+  padding: 0px;
+  height: 100%;
+  padding-bottom: 7%;
+  /* background: blue; */
+  width: 100%;
+}
+.content {
+  height: 100%;
+  /* width: 80%; */
+  overflow-y: scroll;
+}
+.content::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  body {
+    padding-left: 7%;
+    padding-right: 3%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .body {
+    padding-bottom: 25%;
+  }
+  .content {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+}
