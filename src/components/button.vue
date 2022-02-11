@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button
+    <button :disabled="disabled"
       @click.prevent="action"
       :style="{
         background: 'var(--primary)',
@@ -27,6 +27,10 @@ export default {
       type: Object,
       required: false,
     },
+    disabled: {
+      type: Boolean,
+      required: false
+    }
   },
   data() {
     return {

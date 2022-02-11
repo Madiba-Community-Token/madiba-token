@@ -4,6 +4,15 @@
       <div class="header">
         <p>Buy Madiba</p>
       </div>
+      <div class="alert alert-warning" v-if="errorMsg">
+        {{ errorMsg }}
+      </div>
+      <div class="alert alert-success" v-if="isSuccess">
+        Transaction completed!
+        <a :href="`${BASE_BSC_SCAN_URL}/tx/${transactionHash}`" target="_blank"
+          >Check your transaction on BSCScan</a
+        >
+      </div>
       <div class="content">
         <input
           type="text"
@@ -13,9 +22,18 @@
         />
         <p>Enter amount</p>
         <app-button
+          :disabled="isLoading"
           :styles="{ 'margin-bottom': '40px' }"
           :text="'Connect Wallet'"
           @action="connectWallet"
+          v-if="!active"
+        />
+        <app-button
+          :disabled="isLoading"
+          :styles="{ 'margin-bottom': '40px' }"
+          :text="'Buy'"
+          @action="buy"
+          v-else
         />
       </div>
     </div>
@@ -24,6 +42,9 @@
 
 <script>
 import AppButton from "../../components/button.vue";
+import { ethers } from "ethers";
+import { getDibaTokenContract } from "../../utils/contractHelpers";
+import { BASE_BSC_SCAN_URL } from "../../config/index";
 const thousand_seperator = (num) => {
   var num_parts = num.toString().split(".");
   num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -33,8 +54,18 @@ export default {
   components: {
     AppButton,
   },
+  computed: {
+    active() {
+      return this.$store.state.web3.active;
+    },
+  },
   data: () => ({
     amount: "",
+    errorMsg: null,
+    isLoading: false,
+    isSuccess: false,
+    transactionHash: null,
+    BASE_BSC_SCAN_URL: BASE_BSC_SCAN_URL,
   }),
   watch: {
     amount(newValue, oldValue) {
@@ -44,8 +75,68 @@ export default {
   },
   methods: {
     connectWallet() {
+      this.$store.dispatch("connect");
+    },
+    async buy() {
+      this.transactionHash = null;
+      this.errorMsg = null;
+      this.isSuccess = false;
       let amount = this.amount.replace(/,/g, "");
-      alert(amount);
+
+      if (isNaN(amount)) {
+        this.errorMsg = "Enter a valid amount in BNB";
+        return;
+      }
+      if (this.active) {
+        this.isLoading = true;
+        if (parseFloat(amount) < 0.1) {
+          this.isLoading = false;
+          this.errorMsg = "Minimum allowed amount for sale is 0.1 BNB";
+          return;
+        }
+        if (parseFloat(amount) > 5) {
+          this.isLoading = false;
+          this.errorMsg = "Maximum allowed amount for sale is 5 BNB";
+          return;
+        }
+        try {
+          const provider = new ethers.providers.Web3Provider(
+            this.$store.state.web3.provider
+          );
+
+          const contract = getDibaTokenContract(provider);
+          const signer = contract.connect(provider.getSigner());
+
+          const options = {
+            value: ethers.utils.parseEther(amount.toString()),
+          };
+          let tx = await signer.registerWhitelist(
+            this.$store.state.web3.account,
+            options
+          );
+          await tx.wait();
+          this.amount = "";
+          this.isLoading = false;
+          this.isSuccess = true;
+          this.transactionHash = tx.hash;
+        } catch (err) {
+          this.isLoading = false;
+          this.isSuccess = false;
+          if (err.code) {
+            switch (err.code) {
+              case "INSUFFICIENT_FUNDS":
+                this.errorMsg = "Insufficient funds to carry out transaction";
+                return;
+              case "UNPREDICTABLE_GAS_LIMIT":
+                this.errorMsg = err.error.message;
+                return;
+              default:
+                break;
+            }
+          }
+          this.errorMsg = "Request failed. try again.";
+        }
+      }
     },
   },
 };
@@ -104,7 +195,7 @@ export default {
 
     /* background: red; */
   }
-  .buyCard{
+  .buyCard {
     margin-right: 10%;
   }
   .content {
