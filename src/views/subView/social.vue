@@ -5,15 +5,15 @@
       Our community grows stronger daily. Join the Madiba family today
     </p>
     <div class="d-flex iconArea">
-      <div class="iconContainer" @click="openSocialLink('#')">
+      <!-- <div class="iconContainer" @click="openSocialLink('#')">
         <ion-icon name="logo-facebook"></ion-icon>
-      </div>
+      </div> -->
       <div class="iconContainer" @click="openSocialLink('https://twitter.com/officialDiba1')">
         <ion-icon name="logo-twitter"></ion-icon>
       </div>
-      <div class="iconContainer" @click="openSocialLink('#')">
+      <!-- <div class="iconContainer" @click="openSocialLink('#')">
         <ion-icon name="logo-instagram"></ion-icon>
-      </div>
+      </div> -->
       <div class="iconContainer" @click="openSocialLink('#')">
         <ion-icon name="logo-linkedin"></ion-icon>
       </div>
@@ -76,7 +76,7 @@ ion-icon {
     width: 90%;
   }
   .iconArea {
-    width: 70%;
+    width: 50%;
   }
   .iconContainer {
     padding: 14px 14px 10px 14px;

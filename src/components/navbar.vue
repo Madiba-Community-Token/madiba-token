@@ -9,7 +9,10 @@
           ><i class="fa fa-times menuBtn"></i
         ></span>
       </div>
-      <div class="d-flex nameLogoContainer">
+      <div
+        class="d-flex nameLogoContainer pointer"
+        @click="$emit('toggleView', 'home')"
+      >
         <img src="../assets/triangles.png" class="triangleImage" />
         <p class="logoText">Madiba</p>
       </div>
@@ -21,17 +24,23 @@
       >
         Home
       </p>
-      <p  @click="$emit('toggleView', 'buy')" :class="{ navLink: true, activelink: view === 'buy' }">Buy</p>
-      <p :class="{ navLink: true, activelink: view === 'swap' }">Madiba Swap</p>
+      <p
+        @click="$emit('toggleView', 'buy')"
+        :class="{ navLink: true, activelink: view === 'buy' }"
+      >
+        Buy
+      </p>
+      <p title="Coming Soon" :class="{ navLink: true, activelink: view === 'swap' }">Madiba Swap</p>
       <p
         :class="{ navLink: true, activelink: view === 'nft' }"
         @click="$emit('toggleView', 'nft')"
       >
         NFT
       </p>
-      <p :class="{ navLink: true, activelink: view === 'paper' }">
-        White paper 
+      <p title="Coming Soon" :class="{ navLink: true, activelink: view === 'paper' }">
+        White paper
       </p>
+
     </div>
   </div>
 </template>
@@ -88,6 +97,7 @@ export default {
   cursor: pointer;
   color: var(--primary);
   margin-right: 10px;
+  padding-right: 20px;
   display: none;
 }
 .closebtn {
@@ -127,6 +137,22 @@ export default {
 }
 .activelink {
   color: var(--lightText);
+}
+.nameLogoContainer {
+  cursor: pointer;
+}
+.commingSoon {
+  background: var(--primary);
+  color: #000 !important;
+  /* font-weight: bold; */
+  font-size: 10px !important;
+  border-radius: 12px;
+  text-align: center;
+  height: 20px;
+  width: 80px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+  margin-left: 5px;
 }
 @media screen and (min-width: 768px) {
   .closebtn {

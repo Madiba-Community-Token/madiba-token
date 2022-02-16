@@ -30,6 +30,9 @@ html {
 .content::-webkit-scrollbar {
   display: none;
 }
+.pointer{
+  cursor: pointer;
+}
 @media screen and (min-width: 768px) {
   body {
     padding-left: 7%;

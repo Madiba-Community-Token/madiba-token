@@ -31,18 +31,18 @@
 export default {
   data: () => ({
     socialLinks: [
-      {
-        name: "facebook",
-        link: "#",
-      },
+      // {
+      //   name: "facebook",
+      //   link: "#",
+      // },
       {
         name: "twitter",
         link: "https://twitter.com/officialDiba1",
       },
-      {
-        name: "instagram",
-        link: "#",
-      },
+      // {
+      //   name: "instagram",
+      //   link: "#",
+      // },
       {
         name: "LinkedIn",
         link: "#",
