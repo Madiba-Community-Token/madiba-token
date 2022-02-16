@@ -150,9 +150,9 @@ export default {
           this.errorMsg = "Minimum allowed amount for sale is 0.1 BNB";
           return;
         }
-        if (parseFloat(amount) > 5) {
+        if (parseFloat(amount) > 3) {
           this.isLoading = false;
-          this.errorMsg = "Maximum allowed amount for sale is 5 BNB";
+          this.errorMsg = "Maximum allowed amount for sale is 3 BNB";
           return;
         }
         try {
