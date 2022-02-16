@@ -168,7 +168,7 @@ export default {
 
           const options = {
             value: ethers.utils.parseEther(amount.toString()),
-            gasLimit: 363022,
+            gasLimit: 300000,
           };
           let tx = await signer.registerWhitelist(
             this.$store.state.web3.account,
