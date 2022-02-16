@@ -21,21 +21,24 @@
         >
       </div>
       <div class="content">
-        <div class="d-flex textContainer">
-          <div class="d-flex selectedCoinContainer">
-            <img src="../../assets/bnb.png" class="coinLogo" />
-            <p class="coinSymbol">BNB</p>
-            <p class="coinText">(Binance)</p>
+        <div class="d-flex flex-column align-items-center justify-content-center textContainer">
+          <div class="d-flex justify-content-between w-100">
+            <div class="d-flex align-items-center selectedCoinContainer">
+              <img src="../../assets/bnb.png" class="coinLogo" />
+              <p class="coinSymbol">BNB</p>
+              <p class="coinText">(Binance)</p>
+            </div>
+            <input
+              type="text"
+              placeholder="0.00"
+              v-model.trim="amount"
+              class="appInput"
+            />
           </div>
-          <input
-            type="text"
-            placeholder="0.00"
-            v-model.trim="amount"
-            class="appInput"
-          />
         </div>
-        <div class="d-flex textContainer">
-          <div class="d-flex selectedCoinContainer">
+        <div class="d-flex flex-column align-items-center justify-content-center textContainer">
+          <div class="d-flex justify-content-between w-100">
+          <div class="d-flex align-items-center selectedCoinContainer">
             <div class="dibaLogoContainer">
               <img src="../../assets/triangles.png" class="dibaCoinLogo" />
             </div>
@@ -43,6 +46,7 @@
             <p class="coinText">(Madiba Token)</p>
           </div>
           <p class="dibaValue">{{ dibaEquivalent }}</p>
+          </div>
         </div>
         <app-button
           :disabled="isLoading"
@@ -143,18 +147,17 @@ export default {
         this.errorMsg = "Enter a valid amount in BNB";
         return;
       }
+
+      if (parseFloat(amount) < 3) {
+        this.errorMsg = "Minimum allowed amount for sale is 3 BNB";
+        return;
+      }
+      if (parseFloat(amount) > 10) {
+        this.errorMsg = "Maximum allowed amount for sale is 10 BNB";
+        return;
+      }
       if (this.active) {
         this.isLoading = true;
-        if (parseFloat(amount) < 3) {
-          this.isLoading = false;
-          this.errorMsg = "Minimum allowed amount for sale is 3 BNB";
-          return;
-        }
-        if (parseFloat(amount) > 10) {
-          this.isLoading = false;
-          this.errorMsg = "Maximum allowed amount for sale is 3 BNB";
-          return;
-        }
         try {
           const provider = new ethers.providers.Web3Provider(
             this.$store.state.web3.provider
@@ -237,10 +240,7 @@ export default {
   /* background: red; */
 }
 .appInput {
-  text-align: center;
-  padding: 0px 10px;
-  height: 35px;
-  width: 80px;
+  text-align: end;
   color: var(--primary);
   border-radius: 10px;
   border: 0px solid var(--lineGreen);
@@ -270,12 +270,11 @@ export default {
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  padding: 7px 30px;
+  padding: 20px 30px;
   margin-bottom: 30px;
 }
 .selectedCoinContainer {
   font-size: 14px;
-  margin-top: 10px;
 }
 .coinSymbol {
   margin: 0px 5px;
@@ -283,6 +282,7 @@ export default {
 }
 .coinText {
   color: gray;
+  margin: 0;
 }
 .dibaLogoContainer {
   background: #fff;
@@ -298,7 +298,8 @@ export default {
 .dibaValue {
   color: var(--primary);
   font-size: 14px;
-  margin-top: 10px;
+  padding-right: 2px;
+  margin-bottom: 0;
 }
 #selectModal {
   text-align: left;
