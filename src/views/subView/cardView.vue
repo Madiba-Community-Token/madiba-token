@@ -81,7 +81,7 @@
             <div class="iconContainer">
               <i class="fa fa-gamepad"></i>
             </div>
-            <p>Game Zone</p>
+            <p>P2E GAMES</p>
           </div>
           <div class="cardTextContainer">
             <p class="cardText">
@@ -171,8 +171,8 @@ export default {
 .row {
   background-image: url("../../assets/greenBg.png");
   background-position: center;
-   background-size: 87% 80%;
-   background-repeat: no-repeat;
+  background-size: 87% 80%;
+  background-repeat: no-repeat;
 }
 .col-md-6 {
   transition: 2s;

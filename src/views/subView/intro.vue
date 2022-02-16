@@ -9,7 +9,10 @@
             <p>
               <span class="material-icons">api</span>
             </p>
-            <p>Madiba Swap</p>
+            <p>DIBA Swap</p>
+            <div class="commingSoon">
+              <p>Coming Soon</p>
+            </div>
           </div>
           <div class="d-flex options">
             <p>
@@ -23,18 +26,25 @@
             <p>
               <span class="material-icons">api</span>
             </p>
-            <p>Game Zone</p>
+            <p>P2E GAMES</p>
+            <div class="commingSoon">
+              <p>Coming Soon</p>
+            </div>
           </div>
-          <div class="d-flex options">
+          <div class="d-flex options mr-2">
             <p>
               <span class="material-icons">api</span>
             </p>
-            <p>Madiba DAO</p>
+            <p>DIBA DAO</p>
           </div>
         </div>
       </div>
       <div class="footer">
-        <app-button :styles="{}" :text="'Buy $diba'" @action="$emit('viewBuy')" />
+        <app-button
+          :styles="{}"
+          :text="'Buy $diba'"
+          @action="$emit('viewBuy')"
+        />
       </div>
     </div>
     <div class="col-md-8 imageArea">
@@ -98,9 +108,23 @@ export default {
   height: 600px;
   width: 650px;
 }
+.commingSoon {
+  background: var(--primary);
+  color: #000 !important;
+  /* font-weight: bold; */
+  font-size: 10px !important;
+  border-radius: 12px;
+  text-align: center;
+  height: 20px;
+  width: 80px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 768px) {
   .optionsGroup {
-    max-width: 70%;
+    max-width: 100%;
     min-width: 50%;
   }
   .imageArea {
@@ -109,7 +133,14 @@ export default {
   .madibaImage {
     height: 400px;
     width: 430px;
-    margin-left:-40px;
+    margin-left: -40px;
+  }
+  .commingSoon {
+    margin-left: 2px;
+    margin-bottom: 12px;
+    font-size: 7px !important;
+    height: 13px;
+    width: 50px;
   }
 }
 </style>
