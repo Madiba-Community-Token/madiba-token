@@ -6,6 +6,13 @@
       </div>
       <div class="alert alert-warning" v-if="errorMsg">
         {{ errorMsg }}
+        <div v-if="transactionHash">
+          <a
+            :href="`${BASE_BSC_SCAN_URL}/tx/${transactionHash}`"
+            target="_blank"
+            >view transaction</a
+          >
+        </div>
       </div>
       <div class="alert alert-success" v-if="isSuccess">
         Transaction completed!
@@ -14,11 +21,11 @@
         >
       </div>
       <div class="content">
-        <div class="d-flex pointer textContainer">
-          <div @click="toggleSelect(true)" class="d-flex selectedCoinContainer">
+        <div class="d-flex textContainer">
+          <div class="d-flex selectedCoinContainer">
             <img src="../../assets/bnb.png" class="coinLogo" />
-            <p class="coinSymbol">{{ selectedCoin.symbol }}</p>
-            <p class="coinText">({{ selectedCoin.name }})</p>
+            <p class="coinSymbol">BNB</p>
+            <p class="coinText">(Binance)</p>
           </div>
           <input
             type="text"
@@ -33,15 +40,9 @@
               <img src="../../assets/triangles.png" class="dibaCoinLogo" />
             </div>
             <p class="coinSymbol">DIBA</p>
-            <p class="coinText">(Cactus Token)</p>
+            <p class="coinText">(Madiba Token)</p>
           </div>
-          <p class="dibaValue">{{ dibaValue }}</p>
-          <!-- <input
-            type="text"
-            placeholder="0.00"
-            v-model.trim="amount"
-            class="appInput"
-          /> -->
+          <p class="dibaValue">{{ dibaEquivalent }}</p>
         </div>
         <app-button
           :disabled="isLoading"
@@ -88,40 +89,12 @@
       <p>Strategic Whale and Dump control.</p>
       <p></p>
     </div>
-    <div
-      class="modal fade"
-      id="selectModal"
-      data-bs-backdrop="false"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div class="closeContainer">
-              <i class="fa fa-times-circle" data-bs-dismiss="modal"></i>
-            </div>
-            <div
-              v-for="(coin, index) in coins"
-              :key="index"
-              @click="selectCoin(coin)"
-              class="d-flex pointer selectCoinContainer"
-            >
-              <img src="../../assets/bnb.png" class="selectCoinLogo" />
-              <p class="selectCoinText">{{ coin.name }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import AppButton from "../../components/button.vue";
-import { ethers } from "ethers";
+import { ethers, BigNumber } from "ethers";
 import { getDibaTokenContract } from "../../utils/contractHelpers";
 import { BASE_BSC_SCAN_URL } from "../../config/index";
 const thousand_seperator = (num) => {
@@ -137,19 +110,13 @@ export default {
     active() {
       return this.$store.state.web3.active;
     },
+    dibaEquivalent() {
+      return this.dibaPerBNB * this.amount;
+    },
   },
   data: () => ({
     amount: "",
-    coins: [
-      { symbol: "BNB", name: "Binance" },
-      { symbol: "BTC", name: "Bitcoin" },
-      { symbol: "USDT", name: "USDT" },
-    ],
-    selectedCoin: {
-      name: "Binance",
-      symbol: "BNB",
-    },
-    dibaValue: 0.01,
+    dibaPerBNB: 187500,
     errorMsg: null,
     isLoading: false,
     isSuccess: false,
@@ -172,7 +139,7 @@ export default {
       this.isSuccess = false;
       let amount = this.amount.replace(/,/g, "");
 
-      if (isNaN(amount)) {
+      if (isNaN(amount) || amount.trim() == "") {
         this.errorMsg = "Enter a valid amount in BNB";
         return;
       }
@@ -198,6 +165,7 @@ export default {
 
           const options = {
             value: ethers.utils.parseEther(amount.toString()),
+            gasLimit: 363022,
           };
           let tx = await signer.registerWhitelist(
             this.$store.state.web3.account,
@@ -219,6 +187,10 @@ export default {
               case "UNPREDICTABLE_GAS_LIMIT":
                 this.errorMsg = err.error.message;
                 return;
+              case "CALL_EXCEPTION":
+                this.errorMsg = "Transaction failed! check reason on BSCScan";
+                this.transactionHash = err.transactionHash;
+                return;
               default:
                 break;
             }
@@ -226,21 +198,6 @@ export default {
           this.errorMsg = "Request failed. try again.";
         }
       }
-    },
-    toggleSelect(state) {
-      if (!state) {
-        let myModalEl = document.getElementById("selectModal");
-        let modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
-        modal.hide();
-      } else {
-        let myModalEl = document.getElementById("selectModal");
-        let modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
-        modal.show();
-      }
-    },
-    selectCoin(coin) {
-      this.selectedCoin = coin;
-      this.toggleSelect(false);
     },
   },
 };

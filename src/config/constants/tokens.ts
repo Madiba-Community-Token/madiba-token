@@ -15,21 +15,21 @@ export const mainnetTokens = defineTokens({
   diba: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-    18,
-    'CAKE',
-    'PancakeSwap Token',
-    'https://pancakeswap.finance/',
+    8,
+    'DIBA',
+    'Madiba Token',
+    'https://madiba.app/',
   )
 } as const)
 
 export const testnetTokens = defineTokens({
   diba: new Token(
     TESTNET,
-    '0x86411f957296Fe2a3B6e46Cb5b9ef9529F868384',
-    18,
-    'CAKE',
-    'PancakeSwap Token',
-    'https://pancakeswap.finance/',
+    '0x408E0dea0c6977eB74Ea2264934Dc2bE800465e0',
+    8,
+    'DIBA',
+    'Madiba Token',
+    'https://madiba.app/',
   )
 } as const)
 
