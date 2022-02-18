@@ -1,5 +1,7 @@
 <template>
   <div class="parent">
+    <h1>Private Sale
+    </h1>
     <div class="buyCard">
       <div class="header">
         <p>Buy DIBA</p>
@@ -79,8 +81,11 @@
         <li>
           Congratulations! You have bought Madiba Private Sale.
         </li>
+        <li>
+          Ensure that you join the Madiba community (Telegram, Twitter and Discord) using the social links located at the base of this website.
+        </li>
       </ol>
-      <h4>STEPS TO BUY DIBA TOKEN PRIVATE SALE</h4>
+      <h4>PRIVATE SALE INFORMATION</h4>
       <ol>
         <li>
           Private Sale Allocated Token:  50,000,000 DIBA
@@ -89,16 +94,19 @@
           Amount of $DIBA / 1 BNB: To be determined after Public Sale Fair Launch on <a href="https://www.pinksale.finance/" target="_blank">Pinksale.finance</a> ends.
         </li>
         <li>
-          Private Sale Benefit: 50% discount from Public Sale Price once determined after Fair Launch sale on <a href="https://www.pinksale.finance/" target="_blank">Pinksale.finance</a>
+          Private Sale Benefit: 100% discount from Public Sale Price once determined after Fair Launch sale on <a href="https://www.pinksale.finance/" target="_blank">Pinksale.finance</a>
         </li>
         <li>
-          Private Sale Buyers will be up 50% in profit already, upon completion of the public sale, before listing on Pancakeswap.
+          Private Sale Buyers will be up 100% in profit already, upon completion of the public sale, before listing on Pancakeswap.
         </li>
         <li>
           Private Sale Minimum Buy: 3 BNB
         </li>
         <li>
-          Public sale Maximum Buy: 10 BNB
+          Private sale Maximum Buy: 10 BNB
+        </li>
+        <li>
+          Private sale purchased Diba Token will be made claimable to buyers at the end of the Public Sale Fair Launch, before Pancakeswap Listing.
         </li>
       </ol>
     </div>
@@ -251,6 +259,7 @@ export default {
   border: 0px solid var(--lineGreen);
   background: var(--black);
   font-size: 14px;
+  max-width: 100px;
 }
 .appInput:focus {
   box-shadow: none;
@@ -340,6 +349,11 @@ export default {
   color: #fff;
   margin-left: 10px;
   font-size: 14px;
+}
+h1 {
+  font-family: "Chennai Slab", sans-serif;
+  color: var(--lightText);
+  margin-bottom: 25px;
 }
 .textContent {
   margin-top: 5%;
