@@ -25,7 +25,7 @@ export const mainnetTokens = defineTokens({
 export const testnetTokens = defineTokens({
   diba: new Token(
     TESTNET,
-    '0x7B58c81434F242E91aeB4c071812202662d22cB4',
+    '0x17d505eE3ad415bF12b8206C9DAb4324B22141F5',
     8,
     'DIBA',
     'Madiba Token',

@@ -36,18 +36,6 @@
             />
           </div>
         </div>
-        <div class="d-flex flex-column align-items-center justify-content-center textContainer">
-          <div class="d-flex justify-content-between w-100">
-          <div class="d-flex align-items-center selectedCoinContainer">
-            <div class="dibaLogoContainer">
-              <img src="../../assets/triangles.png" class="dibaCoinLogo" />
-            </div>
-            <p class="coinSymbol">DIBA</p>
-            <p class="coinText">(Madiba Token)</p>
-          </div>
-          <p class="dibaValue">{{ dibaEquivalent }}</p>
-          </div>
-        </div>
         <app-button
           :disabled="isLoading"
           :styles="{ 'margin-bottom': '40px' }"
@@ -65,33 +53,54 @@
       </div>
     </div>
     <div class="textContent">
-      <p>
-        Madiba is Multi Utility project dedicated to a True African Hero; Nelson
-        Mandela (Madiba) Built upon the Binance Smart Chain, the project is
-        strategically designed upon the foundation of Nelson Mandela's beliefs,
-        and the Blockchain's core ideology; Decentralizing Wealth, Equality and
-        Freedom.
-      </p>
-      <p>
-        The combination of vast Team experience, well constructed Tokenomics,
-        Absolute transparency, Strategic Marketing plan, ensures that Security
-        and Maximum profit is kept in place for the investors.
-      </p>
-      <p>300% Staking APY (60 days duration)</p>
-      <p>MadibaStake and MadibaSwap platforms Ready on Launch!</p>
-      <p>
-        Revenue generating from Listing Service offered to other project tokens
-        on the MadibaStaking and MadibaSwap platforms.
-      </p>
-      <p>Unlimited Rewards to be earned from Madiba P2E Gameplay.</p>
-      <p>Unanimous decision making by the community via the MadibaDao.</p>
-      <p>Liquidity generation from Tax fees.</p>
-      <p>
-        Manual Buy-back and Burn at certain milestones, using funds from the Dev
-        &amp; Marketing wallet.
-      </p>
-      <p>Strategic Whale and Dump control.</p>
-      <p></p>
+      <h4>STEPS TO BUY DIBA TOKEN PRIVATE SALE</h4>
+      <ol>
+        <li>
+          Connect your BSC wallet to this buy page by tapping the "Connect Button".
+        </li>
+        <li>
+          Select Metamask or Trustwallet from the pop-up list, whichever you use.
+        </li>
+        <li>
+          Authorise the wallet connection if prompted.
+        </li>
+        <li>
+          Make sure you have at least 3.1 BNB balance in the connected BSC wallet.
+        </li>
+        <li>
+          Once wallet is connected, Enter the BNB amount (3 BNB - 10 BNB) you wish to buy $Diba with.
+        </li>
+        <li>
+          Tap or click the "Buy" button.
+        </li>
+        <li>
+          Authorise wallet transaction.
+        </li>
+        <li>
+          Congratulations! You have bought Madiba Private Sale.
+        </li>
+      </ol>
+      <h4>STEPS TO BUY DIBA TOKEN PRIVATE SALE</h4>
+      <ol>
+        <li>
+          Private Sale Allocated Token:  50,000,000 DIBA
+        </li>
+        <li>
+          Amount of $DIBA / 1 BNB: To be determined after Public Sale Fair Launch on <a href="https://www.pinksale.finance/" target="_blank">Pinksale.finance</a> ends.
+        </li>
+        <li>
+          Private Sale Benefit: 50% discount from Public Sale Price once determined after Fair Launch sale on <a href="https://www.pinksale.finance/" target="_blank">Pinksale.finance</a>
+        </li>
+        <li>
+          Private Sale Buyers will be up 50% in profit already, upon completion of the public sale, before listing on Pancakeswap.
+        </li>
+        <li>
+          Private Sale Minimum Buy: 3 BNB
+        </li>
+        <li>
+          Public sale Maximum Buy: 10 BNB
+        </li>
+      </ol>
     </div>
   </div>
 </template>
@@ -114,13 +123,9 @@ export default {
     active() {
       return this.$store.state.web3.active;
     },
-    dibaEquivalent() {
-      return this.dibaPerBNB * this.amount;
-    },
   },
   data: () => ({
     amount: "",
-    dibaPerBNB: 187500,
     errorMsg: null,
     isLoading: false,
     isSuccess: false,
