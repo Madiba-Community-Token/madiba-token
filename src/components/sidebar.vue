@@ -22,7 +22,7 @@
       <i class="fa fa-dollar-sign"></i>
       <span>NFT</span>
     </p>
-    <a href="/MadibaWhitePaper.pdf" :class="{ navItem: true, active: view == 'paper' }">
+    <a target="_blank" rel="noopener noreferrer" href="/MadibaWhitePaper.pdf" :class="{ navItem: true, active: view == 'paper' }">
       <i class="fa fa-file-word"></i>
       <span>White paper</span>
     </a>

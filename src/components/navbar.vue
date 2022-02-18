@@ -37,7 +37,7 @@
       >
         NFT
       </p>
-      <a href="/MadibaWhitePaper.pdf" title="Coming Soon" :class="{ navLink: true, activelink: view === 'paper' }" style="margin-bottom: 1rem">
+      <a target="_blank" rel="noopener noreferrer" href="/MadibaWhitePaper.pdf" title="Coming Soon" :class="{ navLink: true, activelink: view === 'paper' }" style="margin-bottom: 1rem">
         White paper
       </a>
 
