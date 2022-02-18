@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button :disabled="disabled"
+    <button :disabled="disabled" :readonly="readonly"
       @click.prevent="action"
       :style="{
         background: 'var(--primary)',
@@ -28,6 +28,10 @@ export default {
       required: false,
     },
     disabled: {
+      type: Boolean,
+      required: false
+    },
+    readonly: {
       type: Boolean,
       required: false
     }

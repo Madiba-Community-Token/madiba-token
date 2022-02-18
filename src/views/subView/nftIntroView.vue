@@ -9,8 +9,8 @@
           'margin-bottom': '10%',
           width: '250px',
         }"
-        :text="'VIEW ON OPEN SEA'"
-        @action="buyMadiba"
+        :text="'COMING SOON'"
+        :readonly="true"
       />
 
       <div class="textContainer">
