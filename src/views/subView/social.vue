@@ -5,20 +5,14 @@
       Our community grows stronger daily. Join the Madiba family today
     </p>
     <div class="d-flex iconArea">
-      <!-- <div class="iconContainer" @click="openSocialLink('#')">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </div> -->
       <div class="iconContainer" @click="openSocialLink('https://twitter.com/officialDiba1')">
         <ion-icon name="logo-twitter"></ion-icon>
       </div>
-      <!-- <div class="iconContainer" @click="openSocialLink('#')">
-        <ion-icon name="logo-instagram"></ion-icon>
-      </div> -->
-      <div class="iconContainer" @click="openSocialLink('#')">
-        <ion-icon name="logo-linkedin"></ion-icon>
+      <div class="iconContainer" @click="openSocialLink('https://t.me/madibatoken')">
+       <i class="fab fa-telegram"></i>
       </div>
-      <div class="iconContainer" @click="openSocialLink('#')">
-        <ion-icon name="logo-reddit"></ion-icon>
+      <div class="iconContainer" @click="openSocialLink('https://discord.gg/ZhBhu7cRaN')">
+        <ion-icon name="logo-discord"></ion-icon>
       </div>
     </div>
   </div>
@@ -63,6 +57,9 @@ export default {
   border: 5px solid var(--black);
   cursor: pointer;
   outline: 1px solid var(--socialIconbg);
+}
+.iconContainer i {
+  font-size: 34px;
 }
 ion-icon {
   color: var(--black);

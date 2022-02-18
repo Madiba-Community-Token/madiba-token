@@ -39,14 +39,6 @@ export default {
         name: "twitter",
         link: "https://twitter.com/officialDiba1",
       },
-      // {
-      //   name: "instagram",
-      //   link: "#",
-      // },
-      {
-        name: "LinkedIn",
-        link: "#",
-      },
       {
         name: "Telegram",
         link: "https://t.me/madibatoken",
