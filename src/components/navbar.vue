@@ -37,9 +37,9 @@
       >
         NFT
       </p>
-      <p title="Coming Soon" :class="{ navLink: true, activelink: view === 'paper' }">
+      <a href="/MadibaWhitePaper.pdf" title="Coming Soon" :class="{ navLink: true, activelink: view === 'paper' }" style="margin-bottom: 1rem">
         White paper
-      </p>
+      </a>
 
     </div>
   </div>

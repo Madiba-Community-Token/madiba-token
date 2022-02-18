@@ -22,10 +22,10 @@
       <i class="fa fa-dollar-sign"></i>
       <span>NFT</span>
     </p>
-    <p :class="{ navItem: true, active: view == 'paper' }">
+    <a href="/MadibaWhitePaper.pdf" :class="{ navItem: true, active: view == 'paper' }">
       <i class="fa fa-file-word"></i>
       <span>White paper</span>
-    </p>
+    </a>
   </div>
 </template>
 
