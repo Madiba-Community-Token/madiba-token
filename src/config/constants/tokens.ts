@@ -14,7 +14,7 @@ const defineTokens = <T extends TokenList>(t: T) => t
 export const mainnetTokens = defineTokens({
   diba: new Token(
     MAINNET,
-    '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    '0xE5094E58042e5332CfD25Ed18e4d805e86Fb8f05',
     8,
     'DIBA',
     'Madiba Token',
