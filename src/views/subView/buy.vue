@@ -49,7 +49,7 @@
           :disabled="isLoading"
           :styles="{ 'margin-bottom': '40px' }"
           :text="`You're connected to the wrong network`"
-          v-else-if="chainId"
+          v-else-if="chainId == 97"
         />
         <app-button
           :disabled="isLoading"
