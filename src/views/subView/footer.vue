@@ -22,14 +22,42 @@
         >
           {{ site.name }}
         </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="/MadibaWhitePaper.pdf"
+          class="text"
+        >
+          White paper
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/Madiba-Community-Token"
+          class="text"
+        >
+          Github
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          :href="`${BASE_BSC_SCAN_URL}/token/${tokenAddress}`"
+          class="text"
+        >
+          View on BSCScan
+        </a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import tokens from '../../config/constants/tokens';
+import { BASE_BSC_SCAN_URL } from "../../config/index";
 export default {
   data: () => ({
+    BASE_BSC_SCAN_URL: BASE_BSC_SCAN_URL,
+    tokenAddress: tokens.diba.address,
     socialLinks: [
       // {
       //   name: "facebook",
@@ -64,10 +92,6 @@ export default {
       {
         name: "Tokenomics",
         link: "#tokenomics",
-      },
-      {
-        name: "white paper",
-        link: "#",
       },
       {
         name: "community",
