@@ -48,6 +48,12 @@
         <app-button
           :disabled="isLoading"
           :styles="{ 'margin-bottom': '40px' }"
+          :text="`You're connected to the wrong network`"
+          v-else-if="chainId"
+        />
+        <app-button
+          :disabled="isLoading"
+          :styles="{ 'margin-bottom': '40px' }"
           :text="'Buy'"
           @action="buy"
           v-else
@@ -131,6 +137,9 @@ export default {
     active() {
       return this.$store.state.web3.active;
     },
+    chainId() {
+      return this.$store.state.web3.chainId;
+    }
   },
   data: () => ({
     amount: "",
