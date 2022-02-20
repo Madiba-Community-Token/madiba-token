@@ -48,7 +48,11 @@
       </div>
     </div>
     <div class="col-md-8 imageArea">
-      <img src="../../assets/madibabuy.png" class="madibaImage" />
+      <template v-for="(img, i) in images" :key="i">
+        <Transition>
+          <img v-if="currentImage == img" :src="img" class="madibaImage" />
+        </Transition>
+      </template>
     </div>
   </div>
 </template>
@@ -59,10 +63,51 @@ export default {
   components: {
     AppButton,
   },
+  methods: {
+    arrayShuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    },
+  },
+  data() {
+    return {
+      currentImage: 0,
+      images: [
+        "/img/diba/1.png",
+        "/img/diba/2.png",
+        "/img/diba/3.png",
+        "/img/diba/4.png",
+        "/img/diba/5.png",
+        "/img/diba/6.png",
+        "/img/diba/7.png",
+        "/img/diba/8.png",
+        "/img/diba/9.png",
+        "/img/diba/10.png",
+        "/img/diba/11.png",
+      ],
+    };
+  },
+  mounted(){
+    setInterval(() => {
+      this.arrayShuffle(this.images);
+      this.currentImage = this.images[0];
+    }, 2000);
+  }
 };
 </script>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 .textArea {
   margin-top: 4%;
   /* background: red; */
