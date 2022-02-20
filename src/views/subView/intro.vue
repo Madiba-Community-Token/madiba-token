@@ -43,7 +43,6 @@
         <app-button
           :styles="{}"
           :text="'Buy $diba'"
-          @action="$emit('viewBuy')"
         />
       </div>
     </div>

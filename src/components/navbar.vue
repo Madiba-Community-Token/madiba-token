@@ -25,7 +25,6 @@
         Home
       </p>
       <p
-        @click="$emit('toggleView', 'buy')"
         :class="{ navLink: true, activelink: view === 'buy' }"
       >
         Buy

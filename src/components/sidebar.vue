@@ -7,7 +7,7 @@
       <i class="fa fa-home"></i>
       <span>Home</span>
     </p>
-    <p @click="$emit('toggleView', 'buy')" :class="{ navItem: true, active: view == 'buy' }">
+    <p :class="{ navItem: true, active: view == 'buy' }">
       <i class="fa fa-handshake"></i>
       <span>Buy</span>
     </p>
