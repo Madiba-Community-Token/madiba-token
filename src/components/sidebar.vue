@@ -26,6 +26,13 @@
       <i class="fa fa-dollar-sign"></i>
       <span>NFT</span>
     </p>
+    <p
+      @click="$emit('toggleView', 'nft')"
+      :class="{ navItem: true, active: view == 'nft' }"
+    >
+      <i class="fa fa-dollar-sign"></i>
+      <span>Goya Menor NFTs</span>
+    </p>
     <a target="_blank" rel="noopener noreferrer" href="/MadibaWhitePaper.pdf" :class="{ navItem: true, active: view == 'paper' }">
       <i class="fa fa-file-word"></i>
       <span>White paper</span>

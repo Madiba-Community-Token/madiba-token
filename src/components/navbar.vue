@@ -43,6 +43,12 @@
       >
         NFT
       </p>
+      <p
+        :class="{ navLink: true, activelink: view === 'nft' }"
+        @click="$emit('toggleView', 'nft')"
+      >
+        Goya Menor NFTs
+      </p>
       <a target="_blank" rel="noopener noreferrer" href="/MadibaWhitePaper.pdf" title="Coming Soon" :class="{ navLink: true, activelink: view === 'paper' }" style="margin-bottom: 1rem">
         White paper
       </a>
