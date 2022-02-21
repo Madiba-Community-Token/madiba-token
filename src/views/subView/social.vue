@@ -11,7 +11,7 @@
       <div class="iconContainer" @click="openSocialLink('https://t.me/madibatoken')">
        <i class="fab fa-telegram"></i>
       </div>
-      <div class="iconContainer" @click="openSocialLink('https://discord.gg/ZhBhu7cRaN')">
+      <div class="iconContainer" @click="openSocialLink('https://discord.gg/GmepDnUkDZ')">
         <ion-icon name="logo-discord"></ion-icon>
       </div>
     </div>

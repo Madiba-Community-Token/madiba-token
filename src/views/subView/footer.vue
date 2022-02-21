@@ -73,7 +73,7 @@ export default {
       },
       {
         name: "Discord",
-        link: "https://discord.gg/ZhBhu7cRaN",
+        link: "https://discord.gg/GmepDnUkDZ",
       },
     ],
     siteMap: [
