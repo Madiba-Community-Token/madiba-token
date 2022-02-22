@@ -45,7 +45,6 @@
       </p>
       <p
         :class="{ navLink: true, activelink: view === 'nft' }"
-        @click="$emit('toggleView', 'nft')"
       >
         Goya Menor NFTs
       </p>

@@ -27,7 +27,6 @@
       <span>NFT</span>
     </p>
     <p
-      @click="$emit('toggleView', 'nft')"
       :class="{ navItem: true, active: view == 'nft' }"
     >
       <i class="fa fa-dollar-sign"></i>
