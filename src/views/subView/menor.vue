@@ -14,7 +14,7 @@
         />
       </div>
       <div class="col-md-8 imageArea">
-        <img src="/img/menor/4.png" class="madibaImage" />
+        <img src="/img/menor/11.png" class="madibaImage" />
       </div>
     </div>
     <div class="row">
