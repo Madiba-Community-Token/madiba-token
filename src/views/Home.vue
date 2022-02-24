@@ -3,16 +3,17 @@
     <nav-bar @toggleView="toggleView($event)" :view="view" />
     <side-bar @toggleView="toggleView($event)" :current="''" :view="view" />
     <div v-if="view !== 'buy'" class="content" @click="closeNav">
-      <intro-view v-if="view !== 'nft'" @viewBuy="toggleView('buy')"/>
+      <intro-view v-if="view !== 'nft' && view !== 'menornft'" @viewBuy="toggleView('buy')" />
+      <menor-view v-else-if="view == 'menornft'" />
       <NFTView v-else />
-      <div v-if="view !== 'nft'">
+      <div v-if="view !== 'nft' && view !== 'menornft'">
         <overview />
         <card-view />
-        <tokenomics/>
+        <tokenomics />
         <road-map />
         <social />
       </div>
-      <div v-else>
+      <div v-else-if="view == 'nft'">
         <NFTOverview />
         <Nfts />
       </div>
@@ -35,7 +36,8 @@ import NFTOverview from "./subView/nftOverview.vue";
 import Nfts from "./subView/nfts.vue";
 import Footer from "./subView/footer.vue";
 import BuyCard from "./subView/buy.vue";
-import Tokenomics from './subView/tokenomics.vue'
+import MenorView from "./subView/menor.vue";
+import Tokenomics from "./subView/tokenomics.vue";
 export default {
   components: {
     NavBar,
@@ -50,7 +52,8 @@ export default {
     Nfts,
     Footer,
     BuyCard,
-    Tokenomics
+    Tokenomics,
+    MenorView,
   },
   data: () => ({
     view: "",

@@ -27,7 +27,8 @@
       <span>NFT</span>
     </p>
     <p
-      :class="{ navItem: true, active: view == 'nft' }"
+    @click="$emit('toggleView', 'menornft')"
+      :class="{ navItem: true, active: view == 'menornft' }"
     >
       <i class="fa fa-dollar-sign"></i>
       <span>Goya Menor NFTs</span>
