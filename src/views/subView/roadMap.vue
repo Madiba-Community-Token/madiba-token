@@ -62,6 +62,7 @@ export default {
           "Massive Marketing (Stage one)",
           "Coinmarketcap and Coingecko Listing",
           "Madiba NFT collection Release",
+          "Goya Menor NFT collection Release",
           "Massive Marketing (Stage two)",
           "Nomics Listing",
         ],
