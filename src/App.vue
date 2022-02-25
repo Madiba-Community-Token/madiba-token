@@ -27,16 +27,6 @@ declare global {
 })
 export default class App extends Vue {
   providerOptions = {
-    walletconnect: {
-      package: WalletConnectProvider,
-      options: {
-        rpc: {
-          56: "https://bsc-dataseed.binance.org/",
-        },
-        network: "binance",
-        chainId: 56,
-      },
-    },
     "custom-trustwallet": {
       display: {
         logo: "/img/logos/trust.svg",
