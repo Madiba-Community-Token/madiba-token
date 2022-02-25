@@ -13,7 +13,7 @@
 <script lang="ts">
 import Web3ModalVue from "@/components/Web3ModalVue.vue";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import injection from "@/providers/connectors/injected";
+import ConnectToTrustWallect from "@/providers/connectors/trust";
 import { Options, Vue } from "vue-class-component";
 
 declare global {
@@ -36,6 +36,21 @@ export default class App extends Vue {
         network: "binance",
         chainId: 56,
       },
+    },
+    "custom-trustwallet": {
+      display: {
+        logo: "/img/logos/trust.svg",
+        name: "TrustWallet",
+        description: "Connect to your TrustWallet",
+      },
+      package: true,
+      connector: async () => ConnectToTrustWallect(WalletConnectProvider, {
+        rpc: {
+          56: "https://bsc-dataseed.binance.org/",
+        },
+        network: "binance",
+        chainId: 56,
+      }),
     },
     "custom-binancechainwallet": {
       display: {
