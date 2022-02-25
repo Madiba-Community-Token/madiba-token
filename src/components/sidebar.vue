@@ -7,11 +7,7 @@
       <i class="fa fa-home"></i>
       <span>Home</span>
     </p>
-    <p v-if="canStartSale" @click="$emit('toggleView', 'buy')" :class="{ navItem: true, active: view == 'buy' }">
-      <i class="fa fa-handshake"></i>
-      <span>Buy</span>
-    </p>
-    <p v-else :class="{ navItem: true, active: view == 'buy' }">
+    <p @click="$emit('toggleView', 'buy')" :class="{ navItem: true, active: view == 'buy' }">
       <i class="fa fa-handshake"></i>
       <span>Buy</span>
     </p>
@@ -41,7 +37,6 @@
 </template>
 
 <script>
-import { DateTime } from "luxon";
 export default {
   props: {
     view: {
@@ -50,15 +45,9 @@ export default {
     },
   },
   computed: {
-    canStartSale() {
-      return new Date(this.start_time) < new Date();
-    }
   },
   data() {
     return {
-      start_time: DateTime.fromMillis(
-        new Date("2022-02-25 13:00").getTime()
-      ).setZone("America/New_York"),
     }
   }
 };

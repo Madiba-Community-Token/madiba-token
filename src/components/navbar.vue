@@ -24,14 +24,7 @@
       >
         Home
       </p>
-      <p v-if="canStartSale"
-        @click="$emit('toggleView', 'buy')"
-        :class="{ navLink: true, activelink: view === 'buy' }"
-      >
-        Buy
-      </p>
-      <p
-        v-else
+      <p @click="$emit('toggleView', 'buy')"
         :class="{ navLink: true, activelink: view === 'buy' }"
       >
         Buy
@@ -58,7 +51,6 @@
 </template>
 
 <script>
-import { DateTime } from "luxon";
 export default {
   props: {
     view: {
@@ -68,14 +60,9 @@ export default {
   },
   data: () => ({
     closed: true,
-    start_time: DateTime.fromMillis(
-        new Date("2022-02-25 13:00").getTime()
-      ).setZone("America/New_York"),
   }),
   computed: {
-    canStartSale() {
-      return new Date(this.start_time) < new Date();
-    }
+    
   },
   methods: {
     openNav() {
