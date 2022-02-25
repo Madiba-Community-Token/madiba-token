@@ -27,14 +27,15 @@ declare global {
 })
 export default class App extends Vue {
   providerOptions = {
-    "custom-trustwallet": {
-      display: {
-        logo: "/img/logos/trust.svg",
-        name: "TrustWallet",
-        description: "Connect to your TrustWallet",
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: {
+        rpc: {
+          56: "https://bsc-dataseed.binance.org/",
+        },
+        network: "binance",
+        chainId: 56,
       },
-      package: true,
-      connector: async () => injection(),
     },
     "custom-binancechainwallet": {
       display: {
