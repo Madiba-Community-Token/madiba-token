@@ -2,6 +2,7 @@
   <div id="nav">
     <web3-modal-vue
       ref="web3modal"
+      :disableInjectedProvider="true"
       :providerOptions="providerOptions"
       :cacheProvider="true"
       network="binance"
@@ -14,6 +15,7 @@
 import Web3ModalVue from "@/components/Web3ModalVue.vue";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import ConnectToTrustWallect from "@/providers/connectors/trust";
+import injection from '@/providers/connectors/injected';
 import { Options, Vue } from "vue-class-component";
 
 declare global {
@@ -27,6 +29,15 @@ declare global {
 })
 export default class App extends Vue {
   providerOptions = {
+    'custom-metamask': {
+      display: {
+        logo: '/img/logos/metamask.svg',
+        name: 'MetaMask',
+        description: 'Connect to your MetaMask',
+      },
+      package: true,
+      connector: async () => injection(),
+    },
     walletconnect: {
       package: WalletConnectProvider,
       options: {
