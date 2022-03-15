@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     redirectToBuy() {
-      window.location.href = 'https://www.pivksale.finance/launchpad/0xc75Fa4ea913f96dc1cD7E9190E48288Eba5Eb88D?chain=BSC';
+      window.location.href = 'https://www.pinksale.finance/#/launchpad/0xc75Fa4ea913f96dc1cD7E9190E48288Eba5Eb88D?chain=BSC';
     }
   },
   computed: {
