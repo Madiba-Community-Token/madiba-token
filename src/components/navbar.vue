@@ -24,11 +24,11 @@
       >
         Home
       </p>
-      <p @click="$emit('toggleView', 'buy')"
-        :class="{ navLink: true, activelink: view === 'buy' }"
+      <a href="https://www.pivksale.finance/launchpad/0xc75Fa4ea913f96dc1cD7E9190E48288Eba5Eb88D?chain=BSC"
+        :class="{ navLink: true, activelink: view === 'buy' }" style="margin-bottom: 1rem"
       >
         Buy
-      </p>
+      </a>
       <p title="Coming Soon" :class="{ navLink: true, activelink: view === 'swap' }">Madiba Swap</p>
       <p
         :class="{ navLink: true, activelink: view === 'nft' }"

@@ -7,10 +7,10 @@
       <i class="fa fa-home"></i>
       <span>Home</span>
     </p>
-    <p @click="$emit('toggleView', 'buy')" :class="{ navItem: true, active: view == 'buy' }">
+    <a href="https://www.pivksale.finance/launchpad/0xc75Fa4ea913f96dc1cD7E9190E48288Eba5Eb88D?chain=BSC" :class="{ navItem: true, active: view == 'buy' }">
       <i class="fa fa-handshake"></i>
       <span>Buy</span>
-    </p>
+    </a>
     <p :class="{ navItem: true, active: view == 'swap' }">
       <i class="fa fa-exchange-alt"></i>
       <span>Madiba Swap</span>

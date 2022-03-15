@@ -43,7 +43,7 @@
         <app-button
           :styles="{}"
           :text="'Buy $diba'"
-          @action="$emit('viewBuy')"
+          @action="redirectToBuy"
         />
       </div>
     </div>
@@ -109,6 +109,11 @@ export default {
       this.arrayShuffle(this.images);
       this.currentImage = this.images[0];
     }, 2000);
+  },
+  methods: {
+    redirectToBuy() {
+      window.location.href = 'https://www.pivksale.finance/launchpad/0xc75Fa4ea913f96dc1cD7E9190E48288Eba5Eb88D?chain=BSC';
+    }
   },
   computed: {
     
