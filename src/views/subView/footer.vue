@@ -1,7 +1,7 @@
 <template>
   <div class="parent">
     <div class="row">
-      <div class="col-6 socialContainer">
+      <div class="col-sm-4 socialContainer">
         <p class="title">Socials</p>
         <p
           @click="openSocialLink(social.link)"
@@ -12,7 +12,7 @@
           {{ social.name }}
         </p>
       </div>
-      <div class="col-6 socialContainer">
+      <div class="col-sm-4 socialContainer">
         <p class="title">Sitemap</p>
         <a
           :href="site.link"
@@ -45,6 +45,33 @@
           class="text"
         >
           View on BSCScan
+        </a>
+      </div>
+      <div class="col-sm-4 socialContainer">
+        <p class="title">Audits</p>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://coinmarketcap.com/currencies/madiba/"
+          class="text"
+        >
+          Coin market cap
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/coinscope-co/audits/blob/main/diba/audit.pdf"
+          class="text"
+        >
+          Coinscope
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.pinksale.finance/#/launchpad/0xc75Fa4ea913f96dc1cD7E9190E48288Eba5Eb88D?chain=BSC"
+          class="text"
+        >
+          Coin market cap
         </a>
       </div>
     </div>
