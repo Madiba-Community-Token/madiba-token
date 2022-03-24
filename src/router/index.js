@@ -4,9 +4,9 @@ import Home from '../views/Home.vue'
 
 const routes = [
   {
-    path:"/",
-    name:"Home",
-    component:Home
+    path: "/",
+    name: "Home",
+    component: Home
   },
   {
     path: '/about',
@@ -20,7 +20,11 @@ const routes = [
     path: '/claim-airdrop',
     name: 'ClaimAirdrop',
     component: () => import('../views/Airdrop.vue')
-  }
+  },
+  {
+    path: '/*',
+    component: () => import('../views/404Page.vue')
+  },
 ]
 
 const router = createRouter({
