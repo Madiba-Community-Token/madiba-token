@@ -54,12 +54,10 @@ button {
   border-width: 0px;
   font-size: 14px;
   color: var(--black);
-  padding-top:5px!important;
-  padding-bottom:5px!important;
+  padding: 8px 15px;
   font-family: "EngraversGothic", sans-serif;
   font-size: 20px;
   border-radius: 17px;
   box-shadow: 12px 0px 40px -5px var(--primary);
-  /* font-weight: bold; */
 }
 </style>

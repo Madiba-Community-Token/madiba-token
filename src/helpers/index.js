@@ -116,6 +116,9 @@ export function isMobile() {
   return mobile;
 }
 
+export function isIOS() {
+  return /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+}
 
 export function filterMatches(array, condition, fallback) {
   let result = fallback;

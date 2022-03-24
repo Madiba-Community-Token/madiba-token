@@ -11,6 +11,9 @@
       <i class="fa fa-handshake"></i>
       <span>Buy</span>
     </p>
+    <router-link :class="{ navItem: true, active: view == 'buy' }" to="claim-airdrop"
+        >Claim Airdrop</router-link
+      >
     <p :class="{ navItem: true, active: view == 'swap' }">
       <i class="fa fa-exchange-alt"></i>
       <span>Madiba Swap</span>

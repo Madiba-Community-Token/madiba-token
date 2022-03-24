@@ -29,6 +29,9 @@
       >
         Buy
       </p>
+      <router-link :class="{ navLink: true, activelink: view === 'buy' }" to="claim-airdrop" style="margin-bottom: 1rem"
+        >Claim Airdrop</router-link
+      >
       <p title="Coming Soon" :class="{ navLink: true, activelink: view === 'swap' }">Madiba Swap</p>
       <p
         :class="{ navLink: true, activelink: view === 'nft' }"

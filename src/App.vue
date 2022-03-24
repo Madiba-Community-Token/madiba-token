@@ -55,13 +55,18 @@ export default class App extends Vue {
         description: "Connect to your TrustWallet",
       },
       package: true,
-      connector: async () => ConnectToTrustWallect(WalletConnectProvider, {
-        rpc: {
-          56: "https://bsc-dataseed.binance.org/",
-        },
-        network: "binance",
-        chainId: 56,
-      }),
+      connector: async (_, __, opt) =>
+        ConnectToTrustWallect(
+          WalletConnectProvider,
+          {
+            rpc: {
+              56: "https://bsc-dataseed.binance.org/",
+            },
+            network: "binance",
+            chainId: 56,
+          },
+          opt
+        ),
     },
     "custom-binancechainwallet": {
       display: {

@@ -127,7 +127,6 @@ export class ProviderController {
 
     const userOptions = [];
 
-
     providerList.forEach((id) => {
       let provider = this.getProvider(id);
 
@@ -162,6 +161,7 @@ export class ProviderController {
   clearCachedProvider() {
     this.cachedProvider = "";
     removeLocal(CACHED_PROVIDER_KEY);
+    removeLocal('walletconnect');
   }
 
   setCachedProvider(id) {
@@ -174,7 +174,8 @@ export class ProviderController {
       const providerPackage = this.getProviderOption(id, "package");
       const providerOptions = this.getProviderOption(id, "options");
       const opts = { network: this.network || undefined, ...providerOptions };
-      const provider = await connector(providerPackage, opts);
+      const isConnectedBefore = !!this.cachedProvider;
+      const provider = await connector(providerPackage, opts, isConnectedBefore);
       this.eventController.trigger(CONNECT_EVENT, provider);
       if (this.shouldCacheProvider && this.cachedProvider !== id) {
         this.setCachedProvider(id);

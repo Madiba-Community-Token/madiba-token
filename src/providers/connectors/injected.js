@@ -1,4 +1,4 @@
-const ConnectToInjected = async () => {
+const ConnectToInjected = async (isConnectedBefore = true) => {
   let provider = null;
   const params = [{
     "chainId": "0x38", // 56 in decimal
@@ -20,6 +20,16 @@ const ConnectToInjected = async () => {
     try {
       await provider.request({ method: 'eth_requestAccounts', })
       await provider.request({ method: 'wallet_addEthereumChain', params, })
+      if (!isConnectedBefore) {
+        await provider.request({
+          method: "wallet_requestPermissions",
+          params: [
+            {
+              eth_accounts: {}
+            }
+          ]
+        });
+      }
     } catch (error) {
       throw new Error("User Rejected");
     }
