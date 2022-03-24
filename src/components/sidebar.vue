@@ -11,7 +11,7 @@
       <i class="fa fa-handshake"></i>
       <span>Buy</span>
     </p>
-    <router-link :class="{ navItem: true, active: view == 'buy' }" to="claim-airdrop"
+    <router-link :class="{ navItem: true, active: view == 'buy' }" to="claim-airdrop" replace
         >Claim Airdrop</router-link
       >
     <p :class="{ navItem: true, active: view == 'swap' }">
