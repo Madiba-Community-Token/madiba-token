@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="">
     <div class="">
       <div class="mt-5 buyCard">
         <div class="header">
@@ -46,6 +46,9 @@
           />
         </div>
       </div>
+      <div class="spacer textContent">
+      <p>1000 Airdrop participants will be rewarded with 1000 $DIBAAIR Tokens.  The  DIBAAIR Token will be available to swap for BNB and $DIBA on our Swap Exchange after launch.</p>
+    </div>
     </div>
   </div>
 </template>
@@ -287,6 +290,11 @@ h1 {
   font-family: "Chennai Slab", sans-serif;
   color: var(--lightText);
   margin-bottom: 25px;
+}
+.spacer {
+  width: 94%;
+  max-width: 600px;
+  margin: 0px auto;
 }
 .textContent {
   margin-top: 5%;
