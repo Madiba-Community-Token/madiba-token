@@ -68,7 +68,7 @@
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.pinksale.finance/#/launchpad/0xc75Fa4ea913f96dc1cD7E9190E48288Eba5Eb88D?chain=BSC"
+          href="https://coinmarketcap.com/currencies/madiba/"
           class="text"
         >
           Coin market cap

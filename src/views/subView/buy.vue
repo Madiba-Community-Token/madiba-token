@@ -91,30 +91,6 @@
           Ensure that you join the Madiba community (Telegram, Twitter and Discord) using the social links located at the base of this website.
         </li>
       </ol>
-      <h4>PRIVATE SALE INFORMATION</h4>
-      <ol>
-        <li>
-          Private Sale Allocated Token:  50,000,000 DIBA
-        </li>
-        <li>
-          Amount of $DIBA / 1 BNB: To be determined after Public Sale Fair Launch on <a href="https://www.pinksale.finance/" target="_blank">Pinksale.finance</a> ends.
-        </li>
-        <li>
-          Private Sale Benefit: 100% discount from Public Sale Price once determined after Fair Launch sale on <a href="https://www.pinksale.finance/" target="_blank">Pinksale.finance</a>
-        </li>
-        <li>
-          Private Sale Buyers will be up 100% in profit already, upon completion of the public sale, before listing on Pancakeswap.
-        </li>
-        <li>
-          Private Sale Minimum Buy: 3 BNB
-        </li>
-        <li>
-          Private sale Maximum Buy: 10 BNB
-        </li>
-        <li>
-          Private sale purchased Diba Token will be made claimable to buyers at the end of the Public Sale Fair Launch, before Pancakeswap Listing.
-        </li>
-      </ol>
     </div>
   </div>
 </template>
