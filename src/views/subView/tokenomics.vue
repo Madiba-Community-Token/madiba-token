@@ -13,7 +13,7 @@ export default {};
   background-size: 100% 100%;
   background-repeat: no-repeat;
   text-align: center;
-  margin-bottom: 10%;
+  margin-bottom: 0;
   min-height: 400px;
   margin-left: -20px;
   margin-right: -20px;
