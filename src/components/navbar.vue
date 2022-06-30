@@ -5,48 +5,37 @@
         <span v-if="closed" class="hamburgerBtn" @click="openNav()">
           <i class="fa fa-ellipsis-v menuBtn"></i>
         </span>
-        <span v-else class="closebtn" @click="closeNav()"
-          ><i class="fa fa-times menuBtn"></i
-        ></span>
+        <span v-else class="closebtn" @click="closeNav()"><i class="fa fa-times menuBtn"></i></span>
       </div>
-      <div
-        class="d-flex nameLogoContainer pointer"
-        @click="$emit('toggleView', 'home')"
-      >
+      <div class="d-flex nameLogoContainer pointer" @click="$emit('toggleView', 'home')">
         <img src="../assets/triangles.png" class="triangleImage" />
         <p class="logoText">Madiba</p>
       </div>
     </div>
     <div class="d-flex navLinkContainer">
-      <p
-        :class="{ navLink: true, activelink: view === 'home' }"
-        @click="$emit('toggleView', 'home')"
-      >
+      <p :class="{ navLink: true, activelink: view === 'home' }" @click="$emit('toggleView', 'home')">
         Home
       </p>
-      <p @click="$emit('toggleView', 'buy')"
-        :class="{ navLink: true, activelink: view === 'buy' }" style="margin-bottom: 1rem"
-      >
+      <p @click="$emit('toggleView', 'buy')" :class="{ navLink: true, activelink: view === 'buy' }"
+        style="margin-bottom: 1rem">
         Buy
       </p>
-      <router-link :class="{ navLink: true, activelink: view === 'buy' }" to="claim-airdrop" style="margin-bottom: 1rem" replace
-        >Claim Airdrop</router-link
-      >
+      <router-link :class="{ navLink: true, activelink: view === 'buy' }" to="claim-airdrop" style="margin-bottom: 1rem"
+        replace>Claim Airdrop</router-link>
       <p title="Coming Soon" :class="{ navLink: true, activelink: view === 'swap' }">Madiba Swap</p>
-      <p
-        :class="{ navLink: true, activelink: view === 'nft' }"
-        @click="$emit('toggleView', 'nft')"
-      >
+      <p :class="{ navLink: true, activelink: view === 'nft' }" @click="$emit('toggleView', 'nft')">
         NFT
       </p>
-      <p
-      @click="$emit('toggleView', 'menornft')"
-        :class="{ navLink: true, activelink: view === 'menornft' }"
-      >
+      <p @click="$emit('toggleView', 'menornft')" :class="{ navLink: true, activelink: view === 'menornft' }">
         Goya Menor NFTs
       </p>
-      <a target="_blank" rel="noopener noreferrer" href="/MadibaWhitePaper.pdf" title="Coming Soon" :class="{ navLink: true, activelink: view === 'paper' }" style="margin-bottom: 1rem">
+      <a target="_blank" rel="noopener noreferrer" href="/MadibaWhitePaper.pdf" title="Coming Soon"
+        :class="{ navLink: true, activelink: view === 'paper' }" style="margin-bottom: 1rem">
         White paper
+      </a>
+      <a target="_blank" rel="noopener noreferrer" href="/MadibaPitchDeck.pdf" title="Pitch deck"
+        :class="{ navLink: true, activelink: view === 'pitch' }" style="margin-bottom: 1rem">
+        Pitch deck
       </a>
 
     </div>

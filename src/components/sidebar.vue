@@ -36,6 +36,10 @@
       <i class="fa fa-file-word"></i>
       <span>White paper</span>
     </a>
+    <a target="_blank" rel="noopener noreferrer" href="/MadibaPitchDeck.pdf" :class="{ navItem: true, active: view == 'paper' }">
+      <i class="fa fa-file-word"></i>
+      <span>Pitch deck</span>
+    </a>
   </div>
 </template>
 
