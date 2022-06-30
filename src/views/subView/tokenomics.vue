@@ -1,10 +1,5 @@
 <template>
-  <div class="parent" id="tokenomics">
-    <p class="title">Tokenomics</p>
-    <p class="text">Total Supply: 1 Billion &dollar;DIBA</p>
-    <div class="imageContainer">
-      <img src="../../assets/chart.png" class="image" />
-    </div>
+  <div class="parent position-relative" id="tokenomics">
   </div>
 </template>
 
@@ -14,43 +9,39 @@ export default {};
 
 <style scoped>
 .parent {
+  background-image: url(/img/pager/1.jpeg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   text-align: center;
   margin-bottom: 10%;
+  min-height: 400px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
-.title {
-  font-family: "EngraversGothic", sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  color: var(--primary);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-.text {
-  font-size: 13px;
-  font-family: "Chennai Slab", sans-serif;
-  color: var(--lightText);
-}
-.image {
-  height: 200px;
-  width: 320px;
-}
-.imageContainer{
-    margin-top: 5%;
-}
-@media screen and (min-width: 768px) {
-  .parent{
-      margin-top:10%
-  }
-  .parent > p{
-      margin-right:100px
-  }
-  .imageContainer{
 
-      padding-right: 140px;
+@media screen and (min-width: 768px) {
+  .parent {
+    margin-top: 10%
   }
-  .image {
-  height: 450px;
-  width: 700px;
 }
+
+@media screen and (min-width: 768px) {
+  .parent {
+    margin-left: -8%;
+    margin-right: -3.8%;
+    min-height: 500px;
+  }
+}
+
+@media screen and (min-width: 898px) {
+  .parent {
+    min-height: 700px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .parent {
+    min-height: 250px;
+  }
 }
 </style>
